@@ -1,9 +1,9 @@
-export const ShowTask = () => {
-  const tasks= [
-    {id:1001, name:"TASK A", time:"11:55:05 AM 16/7/2023"},
-    {id:1002, name:"TASK B", time:"11:55:05 AM 16/7/2023"},
-    {id:1003, name:"TASK C", time:"11:55:05 AM 16/7/2023"}
-  ]
+export const ShowTask = ({tasklist, setTasklist}) => {
+  // const tasks= [
+  //   {id:1001, name:"TASK A", time:"11:55:05 AM 16/7/2023"},
+  //   {id:1002, name:"TASK B", time:"11:55:05 AM 16/7/2023"},
+  //   {id:1003, name:"TASK C", time:"11:55:05 AM 16/7/2023"}
+  // ]
   
 
 
@@ -12,12 +12,12 @@ export const ShowTask = () => {
     <div className="head">
       <div>
       <span className="title">Todo</span>
-      <span className="count">0</span>
+      <span className="count">{tasklist.length}</span>
     </div>
     <button className="clearAll">Clear All</button>
     </div>
     <ul>
-    { tasks.map((task) => (
+    { tasklist.map((task) => (
       <li>
         <p>
           <span className="name">{task.name}</span>
