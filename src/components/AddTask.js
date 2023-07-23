@@ -1,4 +1,4 @@
-export const AddTask = ({tasklist, setTasklist}) => {
+export const AddTask = ({tasklist, setTasklist, task, setTask}) => {
 const handleSubmit = (e) =>{
   e.preventDefault();
 
@@ -10,6 +10,7 @@ const handleSubmit = (e) =>{
     name: e.target.task.value, 
     time:`${date.toLocaleTimeString()} ${date.toLocaleDateString()}`}
     setTasklist([...tasklist,newTask]);
+    e.target.task.value = "";
 }
 
   return (
