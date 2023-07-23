@@ -5,8 +5,10 @@ export const ShowTask = ({tasklist, setTasklist, task, setTask}) => {
   //   {id:1003, name:"TASK C", time:"11:55:05 AM 16/7/2023"}
   // ]
   
-     const handleEdit = () => {
-
+     const handleEdit = (id) => {
+      //initially we have to find the selector tag
+      const selectedTask = tasklist.find(todo => todo.id === id);
+      setTask(selectedTask);
      }
      const handleDelete = (id) => {
      const updatedTaskList = tasklist.filter(todo => todo.id !== id);
