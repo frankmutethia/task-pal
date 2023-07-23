@@ -4,11 +4,14 @@ export const AddTask = ({tasklist, setTasklist, task, setTask}) => {
     e.preventDefault();
 
     if(task.id){
+      //add and edit functionality
       const date = new Date();
       const updatedTasklist = tasklist.map((todo) => (
         todo.id === task.id ? {id: task.id, name: task.name, time: `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`} : todo
       ));
       setTasklist(updatedTasklist);
+      //setting task as empty
+      //the below object by default empty
       setTask({});
     } else {
       const date = new Date();
@@ -18,6 +21,7 @@ export const AddTask = ({tasklist, setTasklist, task, setTask}) => {
         time: `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`
       }
       setTasklist([...tasklist, newTask]);
+      e.target.task.value = ""
       setTask({});
     }
   }

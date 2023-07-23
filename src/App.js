@@ -6,6 +6,7 @@ import './App.css';
 
 function App() {
   const [tasklist, setTasklist] = useState([]);
+  // we initially start by creating the state
   const [task, setTask] = useState({});
 
   return (
