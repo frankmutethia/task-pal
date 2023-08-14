@@ -3,6 +3,7 @@ export const AddTask = ({tasklist, setTasklist, task, setTask}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    //add functionality
     if(task.id){
       //add and edit functionality
       const date = new Date();
@@ -13,7 +14,10 @@ export const AddTask = ({tasklist, setTasklist, task, setTask}) => {
       //setting task as empty
       //the below object by default empty
       setTask({});
-    } else {
+    } 
+    
+    //edit functionality
+    else {
       const date = new Date();
       const newTask = {
         id: date.getTime(), 

@@ -11,6 +11,7 @@ export const ShowTask = ({tasklist, setTasklist, task, setTask}) => {
   }
 
 return (
+    //kindly note we started with sections
   <section className="showTask">
       <div className="head">
           <div>
